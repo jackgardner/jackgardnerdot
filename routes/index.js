@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Git off my lawn' });
+  res.render('index', { title: 'Git ofssf my lawn' });
 };
