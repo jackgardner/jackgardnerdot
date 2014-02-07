@@ -9,15 +9,25 @@ html
   body
     div.ui.fixed.transparent.inverted.main.menu
         div.container
-            a.item
+            a.item.active(href='/')
                 i.icon.home
-                | home
-            a.item
+                | blog
+            a.item(href='/projects')
+                i.icon.cloud
                 | projects
             a.item
+                i.icon.mail
                 | contact
-    div.ui.page.grid
-        div.ui.column
-            block content
+    div.masthead
+      div.segment
+        h1.ui.white jackgardner.im
+    div.two.column.stackable.ui.grid
+      div.ui.column.eleven.wide
+        div.segment
+          block content
+      div.column.four.wide
+        div.segment
+          include profile
+          include categories
     
     script(src='/javascript/semantic.js')

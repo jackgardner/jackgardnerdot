@@ -1,8 +1,6 @@
-extends layout
-
-block content
-  h1 All Categories
-  ul
-    - each cat in getCategories()
-      li
-        a(href=categoryURL(cat)) #{cat}
+h3 All Categories
+.ui.bulleted.list
+	- each cat in getCategories()
+		.item
+			.content
+				a.header(href=categoryURL(cat)) #{cat}

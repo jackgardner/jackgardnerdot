@@ -1,10 +1,11 @@
 extends layout
 
 block content
-  - var posts = getPosts(0,1)
+  - var posts = getPosts(0,5)
   - var page  = 1
   - each post in posts
     include includes/postSnippet
+    .ui.divider
 
   include includes/pagination
 
