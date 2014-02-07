@@ -8,8 +8,14 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var Poet = require('poet');
 
 var app = express();
+
+var poet = Poet(app, {
+	posts: __dirname + '/_posts'
+});
+poet.watch().init();
 
 // all environments
 app.set('port', process.env.PORT || 15301);
@@ -23,13 +29,21 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.configure('development', function () {
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+});
+
+app.configure('production', function () {
+  app.use(express.errorHandler());
+});
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+
 app.get('/', routes.index);
-app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
