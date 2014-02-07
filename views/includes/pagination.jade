@@ -1,10 +1,11 @@
-ul.pagination
+div.pagination
   - var i = 1;
   - while ( i <= getPageCount() )
     if page == i
-      li(class='active')
-        a(href=pageURL(i)) #{i}
+      div.mini.ui.labeled.icon.button.disabled
+        =i
     else
-      li
-        a(href=pageURL(i)) #{i}
+      div.right.labeled.icon.button
+        i.right.arrow.icon
+            a(href=pageURL(i)) #{i}
     - i++;
