@@ -7,6 +7,21 @@
   },
   "dependencies": {
     "express": "3.4.8",
-    "jade": "*"
-  }
+    "jade": "*",
+    "poet": "1.0.0rc3",
+    "node-schedule": ">= 0.1.8",
+    "request": ">= 2.16.6",
+    "html-to-text": ">= *",
+    "underscore": ">= *",
+    "async": ">= *"
+  },
+  "devDependencies": {
+    "stylus": "*",
+    "uglify-js": "*",
+    "clean-css": "*"
+  },
+  "domains": [
+    "www.jackgardner.eu",
+    "jackgarder.eu"
+  ]
 }
