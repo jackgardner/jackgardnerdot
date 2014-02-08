@@ -20,14 +20,25 @@ html
                 | contact
     div.masthead
       div.segment
-        h1.ui.white jackgardner.im
-    div.two.column.stackable.ui.grid
-      div.ui.column.eleven.wide
-        div.segment
-          block content
-      div.column.four.wide
-        div.segment
-          include profile
-          include categories
+        h1.ui.white syntatic sugar
+    div.ui.grid
+      div.two.column.row.computer.only
+        div.ui.column.eleven.wide
+          div.segment
+            block content
+        div.column.five.wide
+          div.segment
+            include profile
+            include categories
+      div.two.column.row.tablet.mobile.only
+        div.ui.column.sixteen.wide
+          div.segment
+            include profile
+            include categories
+      div.two.column.row.tablet.mobile.only
+        div.ui.column.sixteen.wide
+          div.segment
+            block content
     
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
     script(src='/javascript/semantic.js')
